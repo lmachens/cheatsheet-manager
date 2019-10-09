@@ -1,33 +1,7 @@
-const cheatSheets = [
-  {
-    category: "html",
-    title: "Semantic",
-    details: "Semantic is important\nUse it."
-  },
-  {
-    category: "html",
-    title: "Body",
-    details: "Body...."
-  },
-  {
-    category: "html",
-    title: "Footer",
-    details: "Footer."
-  },
-  {
-    category: "css",
-    title: "Positions",
-    details: "...."
-  },
-  {
-    category: "css",
-    title: "Modals",
-    details: "...."
-  }
-];
-
 async function fetchCheatSheets() {
-  return cheatSheets;
+  return fetch("http://localhost:3000/cheatSheets").then(response =>
+    response.json()
+  );
 }
 
 export async function getGroupedCheatSheets() {
