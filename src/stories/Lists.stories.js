@@ -1,23 +1,15 @@
 import React from "react";
 import ListItem from "../components/ListItem";
+import List from "../components/List";
 
 export default {
   title: "Lists"
 };
 
-export const TopLevelItem = () => <ListItem>HTML</ListItem>;
-export const ActiveTopLevelItem = () => <ListItem active>CSS</ListItem>;
-export const SubLevelItem = () => <ListItem indent>Semantic</ListItem>;
-export const ActiveSubLevelItem = () => (
-  <ListItem active indent>
-    Positions
-  </ListItem>
-);
-
 export const ExampleList = () => {
   const [active, setActive] = React.useState("html");
   return (
-    <>
+    <List>
       <ListItem
         details={
           <>
@@ -32,7 +24,6 @@ export const ExampleList = () => {
       >
         HTML
       </ListItem>
-
       <ListItem
         active={active === "css"}
         onClick={() => setActive("css")}
@@ -44,6 +35,6 @@ export const ExampleList = () => {
       >
         CSS
       </ListItem>
-    </>
+    </List>
   );
 };
